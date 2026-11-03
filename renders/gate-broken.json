@@ -1,0 +1,51 @@
+{
+  "file": "tests/clip-broken/index.html",
+  "config": {
+    "spw": 0.42,
+    "floor": 1,
+    "dt": 0.05,
+    "font": "vazirmatn",
+    "hamneshin": true
+  },
+  "duration": 6,
+  "rows": [
+    {
+      "id": "#title",
+      "text": "همنشین؛ رفیقِ خودشناسیِ تو",
+      "words": 4,
+      "settle": 0.65,
+      "exit": 5.65,
+      "hold": 5,
+      "required": 1.68,
+      "pass": true
+    },
+    {
+      "id": "#subtitle",
+      "text": "برای گفت‌وگویی آرام‌تر با خودت و او",
+      "words": 7,
+      "settle": 1.95,
+      "exit": 2.85,
+      "hold": 0.9,
+      "required": 2.94,
+      "pass": false
+    },
+    {
+      "id": "#badge",
+      "text": "می شود شروع کرد",
+      "words": 4,
+      "settle": 4.85,
+      "exit": 5.05,
+      "hold": 0.2,
+      "required": 1.68,
+      "pass": false
+    }
+  ],
+  "violations": [
+    "R1 #subtitle «برای گفت‌وگویی آرام‌تر با خودت و او»: مکث ساکن 0.9s است، لازم 2.94s (7 کلمه × 0.42 + کف 1s)",
+    "R1 #badge «می شود شروع کرد»: مکث ساکن 0.2s است، لازم 1.68s (4 کلمه × 0.42 + کف 1s)",
+    "R2 #badge: letter-spacing=4px روی متن فارسی — پیوستگی حروف را می‌شکند",
+    "R5 #badge «می شود شروع کرد»: «می/نمی + فاصله» دیده شد — نیم‌فاصله (ZWNJ) لازم است"
+  ],
+  "warnings": [],
+  "pass": false
+}

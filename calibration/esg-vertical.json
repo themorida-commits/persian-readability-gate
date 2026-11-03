@@ -1,0 +1,86 @@
+{
+  "file": "calibration-source/esg-vertical/index.html",
+  "config": {
+    "spw": 0.42,
+    "floor": 1,
+    "dt": 0.05,
+    "font": "vazirmatn",
+    "hamneshin": true
+  },
+  "duration": 23,
+  "rows": [
+    {
+      "id": "#t0",
+      "text": "این لکه از کی اینجاست؟",
+      "words": 5,
+      "settle": 1.5,
+      "exit": 23,
+      "hold": 21.5,
+      "required": 2.1,
+      "pass": true
+    },
+    {
+      "id": "#t5a",
+      "text": "اسمت چیه؟",
+      "words": 2,
+      "settle": 6.6,
+      "exit": 23,
+      "hold": 16.4,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "#t5b",
+      "text": "اضطراب",
+      "words": 1,
+      "settle": 11,
+      "exit": 23,
+      "hold": 12,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "#t7",
+      "text": "احساسات دشمن نیستن؛ بی‌نام‌ونشونن",
+      "words": 4,
+      "settle": 14.9,
+      "exit": 23,
+      "hold": 8.1,
+      "required": 1.68,
+      "pass": true
+    },
+    {
+      "id": "div",
+      "text": "همنشین",
+      "words": 1,
+      "settle": 20.45,
+      "exit": 23,
+      "hold": 2.55,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "div",
+      "text": "رفیقِ خودشناسیِ تو",
+      "words": 3,
+      "settle": 20.45,
+      "exit": 23,
+      "hold": 2.55,
+      "required": 1.26,
+      "pass": true
+    }
+  ],
+  "violations": [
+    "R7 ease خطی ممنوع: tl.to(\"#worldMove\", { x: 0, duration: 4.4, ease: \"none\" }, 0);",
+    "R7 ease خطی ممنوع: tl.to(\"#worldMove\", { x: -P * 1, duration: 6.6, ease: \"none\" }, 5.8);",
+    "R7 ease خطی ممنوع: tl.to(\"#worldMove\", { x: -P * 2, duration: 9.2, ease: \"none\" }, 13.8);"
+  ],
+  "warnings": [
+    "R6 #t0: مرکز متن در y=493 است — بیرون یک‌سوم بالایی قاب (0)",
+    "R6 #t5a: مرکز متن در y=259 است — بیرون یک‌سوم بالایی قاب (0)",
+    "R6 #t5b: مرکز متن در y=259 است — بیرون یک‌سوم بالایی قاب (0)",
+    "R6 #t7: مرکز متن در y=215 است — بیرون یک‌سوم بالایی قاب (0)",
+    "R6 div: مرکز متن در y=64 است — بیرون یک‌سوم بالایی قاب (0)"
+  ],
+  "pass": false
+}

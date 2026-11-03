@@ -1,0 +1,228 @@
+{
+  "file": "calibration-source/demo/index.html",
+  "config": {
+    "spw": 0.42,
+    "floor": 1,
+    "dt": 0.05,
+    "font": "vazirmatn",
+    "hamneshin": true
+  },
+  "duration": 29.8,
+  "rows": [
+    {
+      "id": "span",
+      "text": "همنشین",
+      "words": 1,
+      "settle": 0.95,
+      "exit": 2.6,
+      "hold": 1.65,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "span",
+      "text": "به",
+      "words": 1,
+      "settle": 1.15,
+      "exit": 2.6,
+      "hold": 1.45,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "span",
+      "text": "حرفت",
+      "words": 1,
+      "settle": 1.35,
+      "exit": 2.6,
+      "hold": 1.25,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "span",
+      "text": "گوش",
+      "words": 1,
+      "settle": 1.55,
+      "exit": 2.6,
+      "hold": 1.05,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "span",
+      "text": "می‌ده",
+      "words": 1,
+      "settle": 1.7,
+      "exit": 2.6,
+      "hold": 0.9,
+      "required": 1,
+      "pass": false
+    },
+    {
+      "id": "#subA",
+      "text": "رفیقِ خودشناسیِ تو",
+      "words": 3,
+      "settle": 2.2,
+      "exit": 2.6,
+      "hold": 0.4,
+      "required": 1.26,
+      "pass": false
+    },
+    {
+      "id": "div",
+      "text": "گفت‌وگوها",
+      "words": 1,
+      "settle": 14.3,
+      "exit": 19.1,
+      "hold": 4.8,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "div",
+      "text": "همنشین",
+      "words": 1,
+      "settle": 4.4,
+      "exit": 12.85,
+      "hold": 8.45,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "span",
+      "text": "از",
+      "words": 1,
+      "settle": 21.35,
+      "exit": 23.4,
+      "hold": 2.05,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "span",
+      "text": "حرفِ",
+      "words": 1,
+      "settle": 21.55,
+      "exit": 23.4,
+      "hold": 1.85,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "span",
+      "text": "تو،",
+      "words": 1,
+      "settle": 21.7,
+      "exit": 23.4,
+      "hold": 1.7,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "span",
+      "text": "بینش",
+      "words": 1,
+      "settle": 21.85,
+      "exit": 23.4,
+      "hold": 1.55,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "span",
+      "text": "می‌سازه",
+      "words": 1,
+      "settle": 22.05,
+      "exit": 23.4,
+      "hold": 1.35,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "b",
+      "text": "۷۲٪",
+      "words": 1,
+      "settle": 24.3,
+      "exit": 29.8,
+      "hold": 5.5,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "#chip2",
+      "text": "روند تنش عاطفی",
+      "words": 3,
+      "settle": 24.45,
+      "exit": 29.8,
+      "hold": 5.35,
+      "required": 1.26,
+      "pass": true
+    },
+    {
+      "id": "#chip3",
+      "text": "جمع‌بندی روباه",
+      "words": 2,
+      "settle": 24.55,
+      "exit": 29.8,
+      "hold": 5.25,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "b",
+      "text": "۷۸٪",
+      "words": 1,
+      "settle": 24.7,
+      "exit": 29.8,
+      "hold": 5.1,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "#stingName",
+      "text": "همنشین",
+      "words": 1,
+      "settle": 25.95,
+      "exit": 29.8,
+      "hold": 3.85,
+      "required": 1,
+      "pass": true
+    },
+    {
+      "id": "#stingTag",
+      "text": "رفیقِ خودشناسیِ تو",
+      "words": 3,
+      "settle": 26.7,
+      "exit": 29.8,
+      "hold": 3.1,
+      "required": 1.26,
+      "pass": true
+    }
+  ],
+  "violations": [
+    "R1 span «می‌ده»: مکث ساکن 0.9s است، لازم 1s (1 کلمه × 0.42 + کف 1s)",
+    "R1 #subA «رفیقِ خودشناسیِ تو»: مکث ساکن 0.4s است، لازم 1.26s (3 کلمه × 0.42 + کف 1s)",
+    "R7 ease خطی ممنوع: tl.fromTo('#imgChat2', { y: -120 }, { y: -300, duration: 9.0, ease: 'none' }, 3.0);"
+  ],
+  "warnings": [
+    "R6 span: مرکز متن در y=505 است — بیرون یک‌سوم بالایی قاب (360)",
+    "R6 span: مرکز متن در y=505 است — بیرون یک‌سوم بالایی قاب (360)",
+    "R6 span: مرکز متن در y=505 است — بیرون یک‌سوم بالایی قاب (360)",
+    "R6 span: مرکز متن در y=505 است — بیرون یک‌سوم بالایی قاب (360)",
+    "R6 span: مرکز متن در y=505 است — بیرون یک‌سوم بالایی قاب (360)",
+    "R6 #subA: مرکز متن در y=607 است — بیرون یک‌سوم بالایی قاب (360)",
+    "R6 div: مرکز متن در y=719 است — بیرون یک‌سوم بالایی قاب (360)",
+    "R6 span: مرکز متن در y=505 است — بیرون یک‌سوم بالایی قاب (360)",
+    "R6 span: مرکز متن در y=505 است — بیرون یک‌سوم بالایی قاب (360)",
+    "R6 span: مرکز متن در y=505 است — بیرون یک‌سوم بالایی قاب (360)",
+    "R6 span: مرکز متن در y=505 است — بیرون یک‌سوم بالایی قاب (360)",
+    "R6 span: مرکز متن در y=505 است — بیرون یک‌سوم بالایی قاب (360)",
+    "R6 b: مرکز متن در y=368 است — بیرون یک‌سوم بالایی قاب (360)",
+    "R6 #chip3: مرکز متن در y=655 است — بیرون یک‌سوم بالایی قاب (360)",
+    "R6 b: مرکز متن در y=671 است — بیرون یک‌سوم بالایی قاب (360)",
+    "R6 #stingName: مرکز متن در y=637 است — بیرون یک‌سوم بالایی قاب (360)",
+    "R6 #stingTag: مرکز متن در y=745 است — بیرون یک‌سوم بالایی قاب (360)"
+  ],
+  "pass": false
+}

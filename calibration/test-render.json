@@ -1,0 +1,32 @@
+{
+  "file": "calibration-source/test-render/index.html",
+  "config": {
+    "spw": 0.42,
+    "floor": 1,
+    "dt": 0.05,
+    "font": "vazirmatn",
+    "hamneshin": true
+  },
+  "duration": 0.6,
+  "rows": [
+    {
+      "id": "#title",
+      "text": "همنشین؛ رفیقِ خودشناسیِ تو",
+      "words": 4,
+      "settle": 0.6,
+      "exit": 0.6,
+      "hold": 0,
+      "required": 1.68,
+      "pass": false
+    }
+  ],
+  "violations": [
+    "R1 #title «همنشین؛ رفیقِ خودشناسیِ تو»: مکث ساکن 0s است، لازم 1.68s (4 کلمه × 0.42 + کف 1s)",
+    "R2 #title: letter-spacing=-2.16px روی متن فارسی — پیوستگی حروف را می‌شکند",
+    "R3 #title: فونت «Inter, ui-sans-serif, system-ui, sans-serif» وزیرمتن نیست"
+  ],
+  "warnings": [
+    "R6 #title: مرکز متن در y=540 است — بیرون یک‌سوم بالایی قاب (360)"
+  ],
+  "pass": false
+}

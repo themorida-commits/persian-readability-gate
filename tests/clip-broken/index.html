@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<title>همنشین — کلیپ تست گیت خوانایی</title>
+<script src="assets/gsap.min.js"></script>
+<style>
+  @font-face { font-family: "Vazirmatn"; src: url("assets/vazirmatn-400.woff2") format("woff2"); font-weight: 400; }
+  @font-face { font-family: "Vazirmatn"; src: url("assets/vazirmatn-700.woff2") format("woff2"); font-weight: 700; }
+  @font-face { font-family: "Vazirmatn"; src: url("assets/vazirmatn-900.woff2") format("woff2"); font-weight: 900; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1080px; height:1920px; overflow:hidden; background:#FAF6EF; }
+  #root { position:relative; width:1080px; height:1920px; overflow:hidden; background:#FAF6EF;
+          font-family:"Vazirmatn", sans-serif; direction:ltr; }
+  #cam { position:absolute; left:0; top:0; width:1080px; height:1920px; transform-origin:540px 1100px; }
+  .clip { position:absolute; left:0; top:0; width:1080px; height:1920px; }
+  /* ── لایه متن: یک‌سوم بالایی قاب، همیشه خالی از عناصر بصری ── */
+  #title { position:absolute; left:0; top:190px; width:1080px; text-align:center;
+           direction:rtl; font-size:72px; font-weight:900; line-height:1.35; color:#0F4C4C; }
+  #subtitle { position:absolute; left:0; top:360px; width:1080px; text-align:center;
+              direction:rtl; font-size:50px; font-weight:400; line-height:1.6; color:#3E6B66; }
+  #rule { position:absolute; left:440px; top:520px; width:200px; height:6px; border-radius:3px; background:#C96F4A; }
+  /* عمداً خراب: letter-spacing روی متن فارسی (R2) */
+  #badge { position:absolute; left:0; top:556px; width:1080px; text-align:center;
+           direction:rtl; font-size:40px; font-weight:700; color:#C96F4A; letter-spacing:4px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="6" data-width="1080" data-height="1920">
+  <div id="cam">
+    <!-- صحنه بصری: دو سوم پایینی قاب -->
+    <svg id="stage" class="clip" data-start="0" data-duration="6" data-track-index="0" viewBox="0 0 1080 1920" aria-hidden="true">
+      <!-- نخِ اتصال (اکشن اصلی) -->
+      <path id="thread" d="M 300 1180 C 420 1060, 660 1300, 780 1180" fill="none"
+            stroke="#C96F4A" stroke-width="7" stroke-linecap="round"/>
+      <circle id="threadDotL" cx="300" cy="1180" r="13" fill="#C96F4A"/>
+      <circle id="threadDotR" cx="780" cy="1180" r="13" fill="#C96F4A"/>
+      <!-- صندلی چپ، رو به راست -->
+      <g id="chairL" stroke="#0F4C4C" stroke-width="13" stroke-linecap="round" fill="none">
+        <path d="M 205 1080 L 205 1330"/>
+        <path d="M 205 1180 L 330 1180"/>
+        <path d="M 330 1180 L 330 1420"/>
+        <path d="M 205 1330 L 215 1420"/>
+        <path d="M 205 1080 L 300 1080"/>
+      </g>
+      <!-- صندلی راست، رو به چپ -->
+      <g id="chairR" stroke="#0F4C4C" stroke-width="13" stroke-linecap="round" fill="none">
+        <path d="M 875 1080 L 875 1330"/>
+        <path d="M 875 1180 L 750 1180"/>
+        <path d="M 750 1180 L 750 1420"/>
+        <path d="M 875 1330 L 865 1420"/>
+        <path d="M 875 1080 L 780 1080"/>
+      </g>
+      <!-- میز و دو فنجان -->
+      <g id="cups">
+        <path d="M 470 1420 L 610 1420" stroke="#0F4C4C" stroke-width="11" stroke-linecap="round"/>
+        <path d="M 540 1420 L 540 1520" stroke="#0F4C4C" stroke-width="11" stroke-linecap="round"/>
+        <g id="cupL">
+          <path d="M 478 1372 L 522 1372 L 516 1416 L 484 1416 Z" fill="#C96F4A"/>
+          <path id="steamL" d="M 500 1352 C 492 1332, 508 1322, 500 1302" fill="none" stroke="#3E6B66" stroke-width="6" stroke-linecap="round" opacity="0.55"/>
+        </g>
+        <g id="cupR">
+          <path d="M 558 1372 L 602 1372 L 596 1416 L 564 1416 Z" fill="#C96F4A"/>
+          <path id="steamR" d="M 580 1352 C 572 1332, 588 1322, 580 1302" fill="none" stroke="#3E6B66" stroke-width="6" stroke-linecap="round" opacity="0.55"/>
+        </g>
+      </g>
+      <path d="M 140 1620 L 940 1620" stroke="#0F4C4C" stroke-width="5" stroke-linecap="round" opacity="0.25"/>
+    </svg>
+    <!-- لایه متن -->
+    <div id="textLayer" class="clip" data-start="0" data-duration="6" data-track-index="1">
+      <div id="title">همنشین؛ رفیقِ خودشناسیِ تو</div>
+      <div id="subtitle">برای گفت‌وگویی آرام‌تر با خودت و او</div>
+      <div id="badge">می شود شروع کرد</div>
+      <div id="rule"></div>
+    </div>
+  </div>
+</div>
+<script>
+  window.__timelines = window.__timelines || {};
+
+  function textScene() {
+    const s = gsap.timeline();
+    // ورود تایتل: ease-out با اوورشوت ملایم اسکیل (امضای حرکتی قفل‌شده)
+    s.fromTo("#title",
+      { opacity: 0, y: 34, scale: 0.94 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.6)" }, 0.35);
+    s.fromTo("#rule",
+      { opacity: 0, scaleX: 0 },
+      { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.out" }, 0.85);
+    // ورود زیرعنوان
+    s.fromTo("#subtitle",
+      { opacity: 0, y: 26 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 1.5);
+    // عمداً خراب: زیرعنوان زود می‌رود (R1) و بج فلش می‌زند (R1+R5)
+    s.set("#badge", { opacity: 0 }, 0);
+    s.fromTo("#badge",
+      { opacity: 0, y: 16 },
+      { opacity: 1, y: 0, duration: 0.25, ease: "power3.out" }, 4.6);
+    s.to("#badge", { opacity: 0, duration: 0.2, ease: "power2.in" }, 5.0);
+    s.to("#title",    { opacity: 0, y: -18, duration: 0.4, ease: "power2.in" }, 5.55);
+    s.to("#subtitle", { opacity: 0, y: -14, duration: 0.4, ease: "power2.in" }, 2.75);
+    s.to("#rule",     { opacity: 0, duration: 0.35, ease: "power2.in" }, 5.55);
+    return s;
+  }
+
+  function visualScene() {
+    const v = gsap.timeline();
+    const thread = document.querySelector("#thread");
+    const len = thread.getTotalLength();
+    gsap.set(thread, { strokeDasharray: len, strokeDashoffset: len });
+    gsap.set(["#threadDotL", "#threadDotR"], { scale: 0, transformOrigin: "center" });
+    v.fromTo(["#chairL", "#chairR"],
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.1);
+    v.fromTo("#cups",
+      { opacity: 0, y: 24 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.55);
+    // اکشن اصلیِ کلیپ: کشیده‌شدن نخِ اتصال بین دو صندلی
+    v.to("#threadDotL", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 1.15);
+    v.to(thread, { strokeDashoffset: 0, duration: 2.2, ease: "power2.inOut" }, 1.2);
+    v.to("#threadDotR", { scale: 1, duration: 0.25, ease: "back.out(2)" }, 3.35);
+    v.to(["#steamL", "#steamR"], { y: -10, duration: 0.9, ease: "sine.inOut", yoyo: true, repeat: 1 }, 3.6);
+    return v;
+  }
+
+  const tl = gsap.timeline({ paused: true });
+  tl.add(textScene(), 0);
+  tl.add(visualScene(), 0);
+  // دریفت آرام دوربین قفل‌شده
+  tl.fromTo("#cam", { scale: 1 }, { scale: 1.03, duration: 6, ease: "sine.inOut" }, 0);
+  window.__timelines["main"] = tl;
+</script>
+</body>
+</html>
